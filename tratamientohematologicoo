@@ -1,0 +1,89 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package tratamientohematologicoo;
+
+/**
+ *
+ * @author sala1e23
+ */
+          import java.util.Date;
+
+public class TratamientoHematologicoo {
+    // Atributos de la clase
+    /* El atributo entero id es privado porque es unico para el paciente, entero por que es un elemento de numero entero
+    los atributos tipo string son para guardar elementos de tipo escritura, los tipo dato son la fecha, de la consulta.
+    */
+  
+    private int id;                 // Identificador único del tratamiento
+    private String paciente;        // Nombre del paciente bajo tratamiento
+    private Date fechaInicio;       // Fecha de inicio del tratamiento
+    private Date fechaFin;          // Fecha de finalización del tratamiento
+    private String tipoTratamiento; // Tipo de tratamiento hematológico (por ejemplo, quimioterapia)
+    private String medicamento;     // Medicamento utilizado en el tratamiento
+
+    // Constructor de la clase
+    //en el parentesis reciben los datos asignados, pero se tienen que definir el tipo de dato que se recibe, entero(int), string(dato tipo escritura), date(ytipo fechga). 
+    // los datos se reciben uno a uno 
+    public TratamientoHematologicoo(int id, String paciente, Date fechaInicio, Date fechaFin, String tipoTratamiento, String medicamento) {
+        this.id = id;
+        this.paciente = paciente;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.tipoTratamiento = tipoTratamiento;
+        this.medicamento = medicamento;
+    }
+
+    // Métodos para acceder a los atributos de la clase
+    //en estos los valores son regresados y guardados por cada atributo
+    public int getId() {
+        return id;
+    }
+
+    public String getPaciente() {
+        return paciente;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public Date getFechaFin() {
+        return fechaFin;
+    }
+
+    public String getTipoTratamiento() {
+        return tipoTratamiento;
+    }
+
+    public String getMedicamento() {
+        return medicamento;
+    }
+
+    // Método toString para mostrar la información del tratamiento
+    //valores asignados para a lso atributos de la clase 
+    @Override
+    public String toString() {
+        return "TratamientoHematologico{" +
+                "id=" + id +
+                ", paciente='" + paciente + '\'' +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
+                ", tipoTratamiento='" + tipoTratamiento + '\'' +
+                ", medicamento='" + medicamento + '\'' +
+                '}';
+    }
+
+    // Método principal para probar la clase
+    //ejecutamos el programa e imprimimos
+    public static void main(String[] args) {
+        // Crear una instancia de la clase TratamientoHematologico
+        TratamientoHematologicoo tratamiento = new TratamientoHematologicoo(1, "Juan Perez", new Date(), new Date(), "Quimioterapia", "Medicamento X");
+
+        // Mostrar la información del tratamiento
+        
+        System.out.println("Información del tratamiento hematológico:");
+        System.out.println(tratamiento);
+    }
+}
